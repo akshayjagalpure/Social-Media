@@ -37,7 +37,15 @@ public class User {
     @Column(name = "last_name")
     @NotEmpty(message = "*Please provide your last name")
     private String lastName;
-    @Column(name = "active")
+    @Column(name = "college_name")
+    @NotEmpty(message = "*Please provide your college name")
+    private String collegeName;
+    @Column(name = "mobile_number")
+    @NotEmpty(message = "*Please provide your mobile_number")
+    private String mobile_number;
+    @Column(name = "address")
+    @NotEmpty(message ="*Please provide your address")
+    private String address;
     private int active;
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
