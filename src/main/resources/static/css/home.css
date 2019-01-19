@@ -2,4 +2,12 @@
     font-style: normal;
     font-size: 22px;
     color: #004080;
+
+}
+.form-signin {
+    max-width: 420px;
+    padding: 30px;
+    margin: 80px;
+    background-color: #004080;
+    border: 3px dotted rgba(0,0,0,0.1);
 }
