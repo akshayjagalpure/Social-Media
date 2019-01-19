@@ -1,3 +1,5 @@
+install lombok plugin :
+https://projectlombok.org/setup/intellij
 
 Please follow below steps to install docker on ubuntu:
 
