@@ -1,3 +1,10 @@
+Schema creation :
+
+create database db_springboot_forum;
+
+Run _schema.sql and 
+Run _data.sql
+
 install lombok plugin :
 https://projectlombok.org/setup/intellij
 
