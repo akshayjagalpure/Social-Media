@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:include="fragments/head :: head">
+</head>
+<body>
+	<div class="panel panel-default panel-bg">
+		<div th:replace="fragments/header :: header"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<div th:if="${param.logout}"> 
+					    <div class="alert alert-warning alert-dismissible">
+					    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							You have been signed out.
+					    </div>
+					</div>
+					<div th:replace="fragments/posts-list :: posts"></div>
+				</div>
+				<div class="col-md-4">
+				    <a class="panel btn btn-default quick-post-button" href="/new"
+				        th:if="${pageType} == 'homePage'" sec:authorize="isAuthenticated()">
+				        <span class="middle-centered">Quickly post</span>
+                    </a>
+					<!--<div class="panel panel-default">
+						<div class="panel-heading">Message 1</div>
+						<div class="panel-body">Message content 1</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">Message 2</div>
+						<div class="panel-body">Message content 2</div>
+					</div>-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>
