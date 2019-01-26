@@ -11,6 +11,7 @@
         <result property="dateCreated" column="date_created"/>
         <result property="avatarLocation" column="avatar_location"/>
         <result property="bio" column="bio"/>
+        <result property="mobileNumber" column="mobile_number"/>
     </resultMap>
     
     <sql id="baseColumns" >
@@ -23,6 +24,7 @@
         avatar_location        as "avatarLocation", 
         bio                    as "bio"
         roles                  as "roles"
+        mobile_number          as "mobileNumber",
     </sql>
     
     <insert id="save">
@@ -35,7 +37,8 @@
             date_created, 
             avatar_location, 
             bio,
-            roles
+            roles,
+            mobile_number
             ) 
         VALUES 
             (
@@ -46,7 +49,8 @@
             #{dateCreated}, 
             #{avatarLocation}, 
             #{bio},
-            #{roles}
+            #{roles},
+            #{mobileNumber}
             )
     </insert>
     
@@ -60,7 +64,8 @@
 	        date_created, 
 	        avatar_location, 
 	        bio,
-	        roles
+	        roles,
+            mobile_number
         FROM T_USER
         WHERE id = #{id}
     </select>
@@ -75,7 +80,8 @@
             date_created, 
             avatar_location, 
             bio,
-            roles
+            roles,
+            mobile_number
         FROM T_USER
         WHERE username = #{username}
     </select>
@@ -90,7 +96,8 @@
             date_created, 
             avatar_location, 
             bio,
-            roles
+            roles,
+            mobile_number
         FROM T_USER
         WHERE email = #{email}
     </select>
@@ -105,7 +112,8 @@
             date_created, 
             avatar_location, 
             bio,
-            roles
+            roles,
+            mobile_number
         FROM T_USER
     </select>
     
@@ -117,6 +125,7 @@
             avatar_location = #{avatarLocation},
             bio = #{bio},
             activated = #{activated}
+            mobile_number = #{mobileNumber}
         WHERE id = #{id}
     </update>    
     

@@ -24,6 +24,7 @@ public class User implements Serializable {
 	private String avatarLocation;
 	private String bio;
 	private String roles;
+	private String mobileNumber;
 
 	public User() {
 
@@ -100,6 +101,10 @@ public class User implements Serializable {
 	public void setRoles(String roles) {
 		this.roles = roles;
 	}
+
+	public String getMobileNumber() { return mobileNumber; }
+
+	public void setMobileNumber(String mobileNumber) { this.mobileNumber = mobileNumber; }
 
 	public Set<String> getRolesSet() {
 		if (null == roles) {
