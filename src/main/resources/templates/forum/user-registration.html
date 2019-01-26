@@ -51,11 +51,9 @@
 
 									<div class="row form-group">
 										<div class="col-xs-6">
-											<input type="text" th:field="*{mobileNumber}" class="form-control" placeholder="Mobile Number" autofocus="autofocus"/>
+											<input type="text" th:field="*{mobile}" class="form-control" placeholder="Mobile Number" autofocus="autofocus"/>
 										</div>
-										<div class="col-xs-6">
-											<span class="label label-warning" th:if="${#fields.hasErrors('mobileNumber')}" th:errors="*{mobileNumber}">Mobile Number Error</span>
-										</div>
+
 									</div>
 	                                
 									<div class="row form-group">

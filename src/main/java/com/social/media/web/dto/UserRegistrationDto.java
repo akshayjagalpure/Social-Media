@@ -10,6 +10,16 @@ public class UserRegistrationDto {
 
 	private String matchingPassword;
 
+	public String getmobile() {
+		return mobile;
+	}
+
+	public void setmobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	private String mobile;
+
 	public String getUsername() {
 		return username;
 	}

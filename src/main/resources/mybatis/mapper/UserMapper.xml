@@ -11,7 +11,7 @@
         <result property="dateCreated" column="date_created"/>
         <result property="avatarLocation" column="avatar_location"/>
         <result property="bio" column="bio"/>
-        <result property="mobileNumber" column="mobile_number"/>
+        <result property="mobile" column="mobile"/>
     </resultMap>
     
     <sql id="baseColumns" >
@@ -22,9 +22,9 @@
         activated              as "activated", 
         date_created           as "dateCreated", 
         avatar_location        as "avatarLocation", 
-        bio                    as "bio"
-        roles                  as "roles"
-        mobile_number          as "mobileNumber",
+        bio                    as "bio",
+        roles                  as "roles",
+        mobile          as "mobile"
     </sql>
     
     <insert id="save">
@@ -38,7 +38,7 @@
             avatar_location, 
             bio,
             roles,
-            mobile_number
+            mobile
             ) 
         VALUES 
             (
@@ -50,7 +50,7 @@
             #{avatarLocation}, 
             #{bio},
             #{roles},
-            #{mobileNumber}
+            #{mobile}
             )
     </insert>
     
@@ -65,7 +65,7 @@
 	        avatar_location, 
 	        bio,
 	        roles,
-            mobile_number
+            mobile
         FROM T_USER
         WHERE id = #{id}
     </select>
@@ -81,7 +81,7 @@
             avatar_location, 
             bio,
             roles,
-            mobile_number
+            mobile
         FROM T_USER
         WHERE username = #{username}
     </select>
@@ -97,7 +97,7 @@
             avatar_location, 
             bio,
             roles,
-            mobile_number
+            mobile
         FROM T_USER
         WHERE email = #{email}
     </select>
@@ -113,7 +113,7 @@
             avatar_location, 
             bio,
             roles,
-            mobile_number
+            mobile
         FROM T_USER
     </select>
     
@@ -125,7 +125,7 @@
             avatar_location = #{avatarLocation},
             bio = #{bio},
             activated = #{activated}
-            mobile_number = #{mobileNumber}
+            mobile = #{mobile}
         WHERE id = #{id}
     </update>    
     
