@@ -24,7 +24,7 @@
         avatar_location        as "avatarLocation", 
         bio                    as "bio",
         roles                  as "roles",
-        mobile          as "mobile"
+        mobile                 as "mobile"
     </sql>
     
     <insert id="save">
@@ -124,7 +124,7 @@
             date_created = #{dateCreated},
             avatar_location = #{avatarLocation},
             bio = #{bio},
-            activated = #{activated}
+            activated = #{activated},
             mobile = #{mobile}
         WHERE id = #{id}
     </update>    
