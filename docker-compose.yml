@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  social:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: socialweb
+    ports:
+    - 8085
+  web:
+    image: nginx
+    ports:
+    - 9090:80
+
+  database:
+    image: mysql
