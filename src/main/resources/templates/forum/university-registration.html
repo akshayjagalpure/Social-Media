@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/head :: head">
+</head>
+<body>
+	<div class="panel panel-default panel-bg">
+		<div th:replace="fragments/header :: header"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="container-fluid">
+								<h3>New User Registration</h3>
+								<form action="#" th:action="@{/university/registration}" th:object="${universityDto}" method="post">
+									<div class="row form-group">
+										<div class="col-xs-6">
+											<input type="text" th:field="*{title}" class="form-control" placeholder="title" autofocus="autofocus"/>
+										</div>
+										<div class="col-xs-6">
+											<span class="label label-warning" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Username Error</span>
+										</div>
+									</div>
+
+									<div class="row form-group">
+										<div class="col-xs-6">
+											<input class="btn btn-success" type="submit" value="register" />
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">Message</div>
+						<div class="panel-body">Message content</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">Message</div>
+						<div class="panel-body">Message content</div>
+					</div>
+				</div>-->
+			</div>
+		</div>
+	</div>
+	<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>

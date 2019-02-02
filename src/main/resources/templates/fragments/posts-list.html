@@ -56,7 +56,7 @@
 						</a>
 					</li>
 					<li th:each="currPage : ${#numbers.sequence({pageNum + 2 < totalPages} ? pageNum : {totalPages - 2 < 1} ? 1 : totalPages - 2, 
-					{pageNum + 2 < totalPages} ? pageNum + 2 : totalPages)}">
+					{pageNum + 2 < totalPages} ? pageNum +post.category.name 2 : totalPages)}">
                         <a th:href="@{?p={pn}(pn=${currPage})}" th:text="${currPage}">page number</a>
 					</li>
 					<li th:class="${isLastPage} ? 'hidden' : ''">
