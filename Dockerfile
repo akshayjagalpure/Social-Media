@@ -14,6 +14,8 @@ WORKDIR /app
 
 COPY --from=clone /app/${project} /app
 
+#RUN mvn clean
+
 RUN mvn install
 
 FROM openjdk:8-jre-alpine
@@ -28,7 +30,7 @@ WORKDIR /app
 
 COPY --from=build /app/target/${artifact} /app
 
-EXPOSE 8085
+EXPOSE 8080
 
 ENTRYPOINT ["sh", "-c"]
 
