@@ -36,3 +36,4 @@ sudo docker build --build-arg url=https://github.com/akshayjagalpure/Social-Medi
 
 sudo docker run -ti -p8085:8085 datta/social-media
 
+$ mysql -h "localhost" -u "root" "-proot" "database-name" < "filename.sql"
