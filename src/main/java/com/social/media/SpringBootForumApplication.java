@@ -23,7 +23,8 @@ public class SpringBootForumApplication {
 	@Bean
 	public LocaleResolver localeResolver() {
 		SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
-		sessionLocaleResolver.setDefaultLocale(Locale.CHINA);
+//		sessionLocaleResolver.setDefaultLocale(Locale.CHINA);
+		sessionLocaleResolver.setDefaultLocale(Locale.ENGLISH);
 		return sessionLocaleResolver;
 	}
 

@@ -124,7 +124,8 @@ public class DashboardServiceImpl implements DashboardService {
 			Month month = Month.values()[i < 11 ? i + 1 : i - 11]; // January = 0
 			Long numOfPosts = this.postMapper.countNumOfPostsByMonth(month.getValue());
 			postsNumList.add(numOfPosts);
-			monthsList.add(month.getDisplayName(TextStyle.FULL, Locale.CHINESE));
+			//monthsList.add(month.getDisplayName(TextStyle.FULL, Locale.CHINESE));
+			monthsList.add(month.getDisplayName(TextStyle.FULL, Locale.ENGLISH));
 		}
 		attributes.put("postsNumList", postsNumList);
 		attributes.put("monthsList", monthsList);

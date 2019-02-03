@@ -37,3 +37,5 @@ sudo docker build --build-arg url=https://github.com/akshayjagalpure/Social-Medi
 sudo docker run -ti -p8080:8080 datta/social-media
 
 mysql -h "localhost" -u "root" "-proot" "db_springboot_forum" < "/home/datta/IdeaProjects/Social-Media/src/main/resources/_schema.sql"
+
+mysql -h "localhost" -u "root" "-proot" "db_springboot_forum" < "/home/datta/IdeaProjects/Social-Media/src/main/resources/_data.sql"

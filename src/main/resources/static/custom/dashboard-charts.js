@@ -69,7 +69,7 @@ function loadBarChart() {
 				    		legend: { display: false },
 				    		title: {
 				    			display: false,
-				    			text: '过去十二个月的帖子数量'
+				    			text: 'The number of posts in the past twelve months'
 				    			}
 				    }
 			};
