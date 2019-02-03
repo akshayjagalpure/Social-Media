@@ -26,3 +26,13 @@ docker container ls
 docker rm -f <Name>
 
 docker-compose up
+
+sudo docker build --build-arg url=https://github.com/akshayjagalpure/Social-Media.git\
+  --build-arg project=Social-Media\
+  --build-arg artifactid=Social-Media\
+  --build-arg version=0.0.1-SNAPSHOT\
+  -t datta/social-media - < Dockerfile
+
+
+sudo docker run -ti -p8085:8085 datta/social-media
+
