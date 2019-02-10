@@ -38,6 +38,12 @@ public class UniversityController {
 	@Autowired
 	private UniversityService universityService;
 
+	@RequestMapping(value = "/university/Uni_BY", method = RequestMethod.GET)
+	public String showSyllabus(Model model) {
+		//model.addAttribute("universityDto", new UniversityDto());
+		return "forum/Uni_BY";
+	}
+
 	@RequestMapping(value = "/university/registration", method = RequestMethod.GET)
 	public String showRegistrationPage(Model model) {
 		model.addAttribute("universityDto", new UniversityDto());
