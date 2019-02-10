@@ -4,7 +4,7 @@ services:
   social:
     build:
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-fully-automated
     image: socialweb
     ports:
     - 8085

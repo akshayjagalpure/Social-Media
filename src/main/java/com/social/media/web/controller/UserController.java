@@ -56,6 +56,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/user/registration", method = RequestMethod.POST)
+
 	public String registerNewUser(@Valid @ModelAttribute("userDto") UserRegistrationDto userDto,
 			BindingResult bindingResult, Model model, HttpServletRequest request) {
 		/*
