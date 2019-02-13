@@ -30,16 +30,6 @@ public class UniversityController {
 	@Autowired
 	private UniversityService universityService;
 
-<<<<<<< b4a8ad8d22b66ed4c640d5085f4660b2e665aa7d
-	@RequestMapping(value = "/university/Uni_BY", method = RequestMethod.GET)
-	public String showSyllabus(Model model) {
-		//model.addAttribute("universityDto", new UniversityDto());
-		return "forum/Uni_BY";
-	}
-
-	@RequestMapping(value = "/university/registration", method = RequestMethod.GET)
-	public String showRegistrationPage(Model model) {
-=======
 	@RequestMapping(value = "/university", method = RequestMethod.GET)
 	public String getDashboardPage(Model model, @RequestParam(value = "tab", required = false) String tab,
 								   @RequestParam(value = "start", required = false) String start,
@@ -58,7 +48,6 @@ public class UniversityController {
 
 	@RequestMapping(value = "/university/syllabus", method = RequestMethod.GET)
 	public String showSyllabusPage(Model model) {
->>>>>>> Added University Syllabus UI Changes
 		model.addAttribute("universityDto", new UniversityDto());
 		return "forum/university-syllabus";
 	}

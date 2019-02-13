@@ -24,7 +24,7 @@ public interface PostMapper {
 
 	List<Post> findPostsByUserId(Long userId);
 
-	List<Post> findPostsBetweenRange(@Param("startDateStr")String startDate, @Param("endDateStr")String endDate);
+	List<Post> findPostsBetweenRange(@Param("startDateStr") String startDate, @Param("endDateStr") String endDate);
 
 	Long countNumOfPostsByCategoryId(Long categoryId);
 
