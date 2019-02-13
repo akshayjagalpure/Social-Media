@@ -65,6 +65,8 @@ ALTER TABLE T_USER ADD mobile VARCHAR(255);
 
 CREATE TABLE `T_UNIVERSITY` (
   `id`                 BIGINT       NOT NULL AUTO_INCREMENT,
-  `title`              VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`id`)
+  `branch`             VARCHAR(255) NOT NULL,
+  `year`               VARCHAR(255) NOT NULL,
+  `syllabus`           BLOB         NOT NULL,
+  PRIMARY KEY (`id`),
 );

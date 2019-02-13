@@ -2,21 +2,31 @@ package com.social.media.web.dto;
 
 public class UniversityDto {
 
-	private String title;
+	private String branch;
+	private String year;
+	private byte[] syllabus;
 
-
-	public String getTitle() {
-		return title;
+	public String getBranch() {
+		return branch;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setBranch(String branch) {
+		this.branch = branch;
 	}
 
-	@Override
-	public String toString() {
-		return "UniversityDto{" +
-				"title='" + title + '\'' +
-				'}';
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
+	}
+
+	public byte[] getSyllabus() {
+		return syllabus;
+	}
+
+	public void setSyllabus(byte[] syllabus) {
+		this.syllabus = syllabus;
 	}
 }

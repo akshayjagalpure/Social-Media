@@ -34,6 +34,33 @@ public class UniversityServiceImpl implements UniversityService {
 	private UniversityMapper universityMapper;
 
 	@Override
+	public Map<String, Object> getUniversity(String tab, String startDate, String endDate) {
+		String activeTab = tab == null ? "stats" : tab; // default tab
+		Map<String, Object> attributes = new HashMap<>();
+		attributes.put("activeTab", activeTab);
+		//attributes.put("newPostForm", new PostDto());
+		switch (activeTab) {
+			case "syllabus":
+				attributes.put("syllabus", null);
+				break;
+			/*case "posts":
+				List<Post> posts = this.postMapper.findPostsBetweenRange(startDate + " 00:00:00",
+						endDate + " 23:59:59");
+				attributes.put("posts", posts);
+				break;
+			case "users":
+				List<User> users = this.userMapper.findAll();
+				attributes.put("users", users);
+				break;
+			case "categories":
+				List<Category> categories = this.categoryMapper.findAll();
+				attributes.put("categories", categories);
+				break;*/
+		}
+		return attributes;
+	}
+
+	@Override
 	public int save(University university) {
 		//university.setPassword(bCryptPasswordEncoder.encode(university.getPassword()));
 		return universityMapper.save(university);
@@ -45,7 +72,7 @@ public class UniversityServiceImpl implements UniversityService {
 
 		// save newly registered user
 		University university = new University();
-		university.setTitle(universityDto.getTitle());
+		//university.setTitle(universityDto.getTitle());
 		// save new user and get number of affected row
 		int affectedRow = universityMapper.save(university);
 

@@ -1,5 +1,7 @@
 package com.social.media.persistence.model;
 
+import com.social.media.util.TimeUtil;
+
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Arrays;
@@ -12,10 +14,16 @@ public class University implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
-	private String title;
+	private String branch;
+	private String year;
+	private byte[] syllabus;
 
 	public University() {
 
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
 	}
 
 	public Long getId() {
@@ -26,19 +34,27 @@ public class University implements Serializable {
 		this.id = id;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getBranch() {
+		return branch;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setBranch(String branch) {
+		this.branch = branch;
 	}
 
-	@Override
-	public String toString() {
-		return "University{" +
-				"id=" + id +
-				", title='" + title + '\'' +
-				'}';
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
+	}
+
+	public byte[] getSyllabus() {
+		return syllabus;
+	}
+
+	public void setSyllabus(byte[] syllabus) {
+		this.syllabus = syllabus;
 	}
 }

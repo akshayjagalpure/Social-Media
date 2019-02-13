@@ -13,5 +13,6 @@ public interface UniversityService {
 
 	int save(University university);
 	Map<String, Object> registerUniversity(UniversityDto universityDto, HttpServletRequest request);
+	Map<String, Object> getUniversity(String tab, String start, String end);
 
 }

@@ -4,23 +4,20 @@
 
     <resultMap id="UserResultMap" type="com.social.media.persistence.model.University">
         <id property="id" column="id"/>
-        <result property="title" column="title"/>
+        <result property="branch" column="branch"/>
+        <result property="year" column="year"/>
+        <result property="syllabus" column="syllabus"/>
     </resultMap>
 
     <sql id="baseColumns" >
         id                     as "id",
-        title               as "title",
+        branch               as "branch",
+        year               as "year",
+        syllabus              as "syllabus"
     </sql>
 
     <insert id="save">
-        INSERT INTO `T_UNIVERSITY`
-        (
-        title
-        )
-        VALUES
-        (
-        #{title}
-        )
+        INSERT INTO `T_UNIVERSITY` (branch, year, syllabus) VALUES (#{branch}, #{year}, #{syllabus})
     </insert>
 
 </mapper>
