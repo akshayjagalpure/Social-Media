@@ -3,6 +3,11 @@
 <head th:include="fragments/head :: head">
 </head>
 <body>
+registration success.
+<div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    registration success.
+</div>
     <div class="panel panel-default panel-bg">
         <div th:replace="fragments/header :: header"></div>
         <div class="container">
@@ -12,13 +17,13 @@
                         <div class="panel-body">
                             <div class="container-fluid">
                                 <div th:switch="${universityRegistrationResult}">
-                                    <div th:case="'success'"> 
+                                    <div th:case="'success'">
                                         <div class="alert alert-success alert-dismissible">
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             registration success.
                                         </div>
                                     </div>
-                                    <div th:case="'failure'"> 
+                                    <div th:case="'failure'">
                                         <div class="alert alert-danger alert-dismissible">
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             registration failed.

@@ -1,89 +1,81 @@
 <!DOCTYPE html>
 <html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
 <body>
-    <div th:if="${activeTab == 'syllabus'}" id="universitySyllabus" th:fragment="syllabus">
-        <div id="canvas-holder" style="width:100%">
-            <!--<div class="centered"><h3>Classified post ratio/quantity</h3></div>
-            <canvas id="pieChart"></canvas>
-            <div class="centered"><h3>Number of posts in the past 12 months</h3></div>
-	        <canvas id="barChart"></canvas>-->
-            <div class="panel panel-default panel-bg">
-                <!--<div th:replace="fragments/header :: header"></div>-->
-                <!--<div class="container">-->
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <div class="container-fluid">
-                                        <h3>Search Syllabus</h3>
-                                        <!--<form method="post">-->
-                                        <form action="#" th:action="@{/university/syllabus}" th:object="${universityDto}" method="post">
+<div th:if="${activeTab == 'syllabus'}" id="universitySyllabus" th:fragment="syllabus">
 
-                                            <div class="row form-group">
-                                                <div class="col-xs-6">
-                                                    <input type="text" th:field="*{branch}" class="form-control" placeholder="branch" autofocus="autofocus"/>
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    <span class="label label-warning" th:if="${#fields.hasErrors('branch')}" th:errors="*{branch}">Branch Error</span>
-                                                </div>
-                                            </div>
+    <div class="container-fluid">
 
-                                            <div class="row form-group">
-                                                <div class="col-xs-6">
-                                                    <input th:field="*{year}" type="text" class="form-control" placeholder="year"/>
-                                                </div>
-                                                <div class="col-xs-6">
-                                                    <span class="label label-warning" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">year Error</span>
-                                                </div>
-                                            </div>
+        <!-- date range picker -->
+        <!--<div class="row form-group">-->
+            <!--<div id="reportrange" class="pull-right selectbox" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">-->
+                <!--<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;-->
+                <!--<span></span> <b class="caret"></b>-->
+            <!--</div>-->
+        <!--</div>-->
 
-                                            <div class="row form-group">
-                                                <div class="col-xs-6">
-                                                    <input class="btn btn-success" type="submit" value="Search" />
-                                                </div>
-                                            </div>
-                                            <!--<fieldset>
-                                                <div th:if="${param.error}">
-                                                    <div class="alert alert-danger">
-                                                        The user is not activated or the password is incorrect.
-                                                    </div>
-                                                </div>
-                                                <div th:if="${param.logout}">
-                                                    <div class="alert alert-info">
-                                                        You have already logged out.
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input name="branch" id="branch" type="text" class="form-control" autofocus="autofocus" placeholder="Enter branch"/>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input name="year" id="year" type="text" class="form-control" placeholder="Enter year"/>
-                                                </div>
-                                                <input class="btn btn-success" type="submit" value="Submit" />
-                                            </fieldset>-->
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--<div class="col-md-4">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">Message</div>
-                                <div class="panel-body">Message content</div>
-                            </div>
-
-                            <div class="panel panel-default">
-                                <div class="panel-heading">Message</div>
-                                <div class="panel-body">Message content</div>
-                            </div>
-                        </div>-->
-                    </div>
-                <!--</div>-->
-            </div>
+        <!--<div class="row form-group">-->
+            <!--Branch：-->
+            <!--<select th:field="*{category}" id="selectpicker" class="selectpicker" data-live-search="true"></select>-->
+        <!--</div>-->
+        <div class="row form-group">
+            <!--<div id="branch" class="pull-right selectbox" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">-->
+            <!--<div id="branch" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">-->
+            Branch :
+                <select>
+                    <option th:value="'computer'" th:text="Computer"></option>
+                    <option th:value="'it'" th:text="IT"></option>
+                </select>
+                <!--<span></span> <b class="caret"></b>-->
+            <!--</div>-->
 
         </div>
-        <script src="/custom/dashboard-charts.js"></script>
-        <script src="/custom/randomColor.min.js"></script>
+        <div class="row form-group">
+        <embed src="../forum/assignment.pdf" />
+        </div>
+        <!-- post edit result message -->
+        <!--<div th:switch="${editResult}">
+            <div th:case="'success'">
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    The data was updated successfully.
+                </div>
+            </div>
+            <div th:case="'failure'">
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    Data update failed.
+                </div>
+            </div>
+        </div>
+
+        <div th:if="${posts.size()==0}" class="centered"><h2>No content for the selected date</h2></div>
+
+        <ul class="list-group list-custom-corner">
+            <li class="profile-list list-group-item side-borderless last-border" th:each="post:${posts}">
+                <div class="media">
+                    <div class="media-body">
+                        <div class="media-heading">
+                            <a class="post-title" th:href="@{/post/{postId}(postId=${post.id})}" th:text="${post.title}">title</a>
+                        </div>
+                        <a class="post-tag"
+                           th:href="@{/category/{categoryName}(categoryName=${post.category.name})}"
+                           th:text="${post.category.displayName}"></a>
+                        <span class="post-date" th:text="${'release time：' + post.dateFormat()}"></span>
+                    </div>
+                    <div class="media-right media-middle">
+                        <button type="button" class="btn btn-primary editButton" data-toggle="modal" th:attr="data-post-id=${post.id}">edit</button>
+                    </div>
+                    <div class="media-right media-middle">
+                        <button type="button" class="btn btn-danger deleteButton" data-toggle="modal"
+                                th:attr="data-post-id=${post.id},
+		                    data-post-title=${post.title},
+		                    data-post-username=${post.user.username},
+		                    data-post-date=${post.dateCreated}">delete</button>
+                    </div>
+                </div>
+            </li>
+        </ul>-->
     </div>
+</div>
 </body>
 </html>

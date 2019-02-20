@@ -1,48 +1,89 @@
 <!DOCTYPE html>
 <html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments/head :: head">
-</head>
 <body>
-    <div class="panel panel-default panel-bg">
-        <div th:replace="fragments/header :: header"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="container-fluid">
-                                <div th:switch="${universityRegistrationResult}">
-                                    <div th:case="'success'"> 
-                                        <div class="alert alert-success alert-dismissible">
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            registration success.
-                                        </div>
-                                    </div>
-                                    <div th:case="'failure'"> 
-                                        <div class="alert alert-danger alert-dismissible">
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            registration failed.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--<div class="col-md-4">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Message</div>
-                        <div class="panel-body">Message content</div>
-                    </div>
+<div id="universitySyllabus" th:fragment="syllabus">
+    <div id="canvas-holder" style="width:100%">
+        <div class="centered"><h3>Classified post ratio/quantity</h3></div>
+        <!--<canvas id="pieChart"></canvas>
+        <div class="centered"><h3>Number of posts in the past 12 months</h3></div>
+        <canvas id="barChart"></canvas>-->
+        <!--<div class="panel panel-default panel-bg">-->
+            <!--&lt;!&ndash;<div th:replace="fragments/header :: header"></div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-8">-->
+                    <!--<div class="panel panel-default">-->
+                        <!--<div class="panel-body">-->
+                            <!--<div class="container-fluid">-->
+                                <!--<h3>Search Syllabus</h3>-->
+                                <!--&lt;!&ndash;<form method="post">&ndash;&gt;-->
+                                <!--<form action="#" th:action="@{/university/syllabus}" th:object="${universityDto}" method="post">-->
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Message</div>
-                        <div class="panel-body">Message content</div>
-                    </div>
-                </div>-->
-            </div>
-        </div>
+                                    <!--<div class="row form-group">-->
+                                        <!--<div class="col-xs-6">-->
+                                            <!--<input type="text" th:field="*{branch}" class="form-control" placeholder="branch" autofocus="autofocus"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-xs-6">-->
+                                            <!--<span class="label label-warning" th:if="${#fields.hasErrors('branch')}" th:errors="*{branch}">Branch Error</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+                                    <!--<div class="row form-group">-->
+                                        <!--<div class="col-xs-6">-->
+                                            <!--<input th:field="*{year}" type="text" class="form-control" placeholder="year"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-xs-6">-->
+                                            <!--<span class="label label-warning" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">year Error</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+                                    <!--<div class="row form-group">-->
+                                        <!--<div class="col-xs-6">-->
+                                            <!--<input class="btn btn-success" type="submit" value="Search" />-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--&lt;!&ndash;<fieldset>-->
+                                        <!--<div th:if="${param.error}">-->
+                                            <!--<div class="alert alert-danger">-->
+                                                <!--The user is not activated or the password is incorrect.-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div th:if="${param.logout}">-->
+                                            <!--<div class="alert alert-info">-->
+                                                <!--You have already logged out.-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-group">-->
+                                            <!--<input name="branch" id="branch" type="text" class="form-control" autofocus="autofocus" placeholder="Enter branch"/>-->
+                                        <!--</div>-->
+                                        <!--<div class="form-group">-->
+                                            <!--<input name="year" id="year" type="text" class="form-control" placeholder="Enter year"/>-->
+                                        <!--</div>-->
+                                        <!--<input class="btn btn-success" type="submit" value="Submit" />-->
+                                    <!--</fieldset>&ndash;&gt;-->
+                                <!--</form>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;<div class="col-md-4">-->
+                    <!--<div class="panel panel-default">-->
+                        <!--<div class="panel-heading">Message</div>-->
+                        <!--<div class="panel-body">Message content</div>-->
+                    <!--</div>-->
+
+                    <!--<div class="panel panel-default">-->
+                        <!--<div class="panel-heading">Message</div>-->
+                        <!--<div class="panel-body">Message content</div>-->
+                    <!--</div>-->
+                <!--</div>&ndash;&gt;-->
+            <!--</div>-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</div>-->
+
     </div>
-    <footer th:replace="fragments/footer :: footer"></footer>
+    <script src="/custom/dashboard-charts.js"></script>
+    <script src="/custom/randomColor.min.js"></script>
+</div>
 </body>
 </html>

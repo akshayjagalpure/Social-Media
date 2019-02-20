@@ -91,12 +91,13 @@ public class UniversityController {
 		//model.addAllAttributes(attributes);
 		//String registrationResult = affectedRow == 1 ? "success" : "failure";
 
+        model.addAttribute("universityDto", new UniversityDto());
+        return "forum/university-syllabus-result";
 
-		Map<String, Object> attributes = new HashMap<String, Object>();
+		/*Map<String, Object> attributes = new HashMap<String, Object>();
 		String registrationResult = "success";
 		attributes.put("universityRegistrationResult", registrationResult);
-		System.out.println("universityRegistrationResult");
-		return "forum/university-syllabus-result";
+		return "forum/university-syllabus-result";*/
 	}
 
 	/*@RequestMapping(value = "/university/syllabus", method = RequestMethod.POST)
