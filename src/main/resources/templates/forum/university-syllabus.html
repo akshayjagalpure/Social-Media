@@ -6,12 +6,12 @@
     <div class="container-fluid">
 
         <!-- date range picker -->
-        <!--<div class="row form-group">-->
-            <!--<div id="reportrange" class="pull-right selectbox" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">-->
-                <!--<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;-->
-                <!--<span></span> <b class="caret"></b>-->
-            <!--</div>-->
-        <!--</div>-->
+        <!--<div class="row form-group">
+            <div id="syllabusrange" class="pull-right selectbox" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
+                <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>&nbsp;
+                <span></span> <b class="caret"></b>
+            </div>
+        </div>-->
 
         <!--<div class="row form-group">-->
             <!--Branch：-->
@@ -21,13 +21,47 @@
             <!--<div id="branch" class="pull-right selectbox" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">-->
             <!--<div id="branch" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">-->
             Branch :
-                <select>
-                    <option th:value="'computer'" th:text="Computer"></option>
-                    <option th:value="'it'" th:text="IT"></option>
+                <select id="branch">
+                    <option th:value="'blank'"></option>
+                    <option th:value="'Computer'" th:text="Computer"></option>
+                    <option th:value="'Mechanical'" th:text="Mechanical"></option>
+                    <option th:value="'IT'" th:text="IT"></option>
+                    <option th:value="'ETC'" th:text="ETC"></option>
+                    <option th:value="'Electrical'" th:text="Electrical"></option>
+                    <option th:value="'Civil'" th:text="Civil"></option>
+
                 </select>
             <br>
-            <a href="https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf"
-               th:href="@{https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf}">https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf</a>
+            <br>
+            Year:
+            <select id="year" onchange="showSyllabus()">
+                <option th:value="'blank'"></option>
+                <option th:value="'first'" th:text="First-Year"></option>
+                <option th:value="'second'" th:text="Second-Year"></option>
+                <option th:value="'third'" th:text="Third-Year"></option>
+                <option th:value="'final'" th:text="Final-Year"></option>
+            </select>
+            <br>
+            <br>
+            <div class="row" id="link"></div>
+            <script>
+                function showSyllabus()
+                {
+                    var branch = document.getElementById("branch");
+                    var year = document.getElementById("year");
+
+                    if(branch.value == "Computer" && year.value == "first") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Computer First Year syllabus</a></li>";
+
+                    }
+
+                    //alert('in here');
+
+
+                }
+            </script>
+
                 <!--<span></span> <b class="caret"></b>-->
             <!--</div>-->
 
