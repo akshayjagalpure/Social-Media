@@ -52,7 +52,7 @@ public class StorageServiceImpl implements StorageService {
 
 			// update user avatar location
 			User user = this.userMapper.findByUsername(username);
-			user.setAvatarLocation("home/datta/Pictures/" + username + "/" + filename);
+			user.setAvatarLocation("/home/akshay/Test/" + username + "/" + filename);
 			return user;
 		} catch (Exception e) {
 			throw new StorageException("Failed to store file " + filename, e);
