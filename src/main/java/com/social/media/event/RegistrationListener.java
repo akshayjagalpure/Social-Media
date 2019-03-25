@@ -1,5 +1,8 @@
 package com.social.media.event;
 
+import java.io.IOException;
+import java.util.Date;
+import java.util.Properties;
 import java.util.UUID;
 
 import com.social.media.persistence.dao.UserMapper;
@@ -15,10 +18,13 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Component;
 
+import javax.mail.*;
+import javax.mail.internet.*;
+
 @Component
 public class RegistrationListener implements ApplicationListener<OnRegistrationCompleteEvent> {
 
-	private static final String VERIFICATION_EMAIL_FROM_ADDR = "springbootforum@163.com";
+	private static final String VERIFICATION_EMAIL_FROM_ADDR = "datta@gmail.com";
 
 	private static final String VERIFICATION_EMAIL_SUBJECT = "User registration confirmation";
 
@@ -65,9 +71,60 @@ public class RegistrationListener implements ApplicationListener<OnRegistrationC
 		email.setFrom(VERIFICATION_EMAIL_FROM_ADDR);
 		email.setSubject(VERIFICATION_EMAIL_SUBJECT);
 		email.setText(confirmationLink);
+		System.out.println("confirmation link >> " + user.getEmail());
 		email.setTo(user.getEmail());
-
+		System.out.println("confirmation link >> " + user.getEmail());
 		// send email asynchronously
-		// this.emailService.sendEmail(email);
+		 //this.emailService.sendEmail(email);
+		System.out.println("confirmation link >> " + email);
+
+		Properties props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", "smtp.gmail.com");
+		props.put("mail.smtp.port", "587");
+
+		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication("datta@gmail.com", "Datta@1995");
+			}
+		});
+		Message msg = new MimeMessage(session);
+		try {
+			msg.setFrom(new InternetAddress("datta@gmail.com", false));
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+
+		try {
+			msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse("datta@gmail.com"));
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+		try {
+			msg.setSubject("Tutorials point email");
+			msg.setContent("Tutorials point email", "text/html");
+			msg.setSentDate(new Date());
+
+			MimeBodyPart messageBodyPart = new MimeBodyPart();
+			messageBodyPart.setContent("Tutorials point email", "text/html");
+
+			Multipart multipart = new MimeMultipart();
+			multipart.addBodyPart(messageBodyPart);
+			MimeBodyPart attachPart = new MimeBodyPart();
+
+//		attachPart.attachFile("/var/tmp/image19.png");
+//		multipart.addBodyPart(attachPart);
+			msg.setContent(multipart);
+			Transport.send(msg);
+			System.out.println("confirmation link >> new  " + msg);
+
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+
+
+
+
 	}
 }
