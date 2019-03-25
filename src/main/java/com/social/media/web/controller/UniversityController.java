@@ -113,4 +113,33 @@ public class UniversityController {
 		return "forum/university-syllabus-result";
 	}*/
 
+	@RequestMapping(value = "/university/result", method = RequestMethod.GET)
+	public String showresultPage(Model model) {
+		model.addAttribute("universityDto", new UniversityDto());
+		return "forum/university-result";
+	}
+		@RequestMapping(value = "/university/result", method = RequestMethod.POST)
+
+		public String getUniversityresult(@Valid @ModelAttribute("universityDto") UniversityDto universityDto,
+				BindingResult bindingResult, Model model, HttpServletRequest request) {
+			/*
+			 * form validation, check username and email uniqueness
+			 */
+			//this.userValidator.validate(universityDto, bindingResult);
+		/*if (bindingResult.hasErrors()) {
+			logger.info("BindingResult has errors >> " + bindingResult.getFieldError());
+			return "forum/user-registration";
+		}*/
+		/*Map<String, Object> attributes = this.userService.registerUserAccount(universityDto, request);
+		if (null == attributes) {
+			throw new ResourceNotFoundException("attributes not found.");
+		}*/
+			//model.addAllAttributes(attributes);
+			//String registrationResult = affectedRow == 1 ? "success" : "failure";
+
+			model.addAttribute("universityDto", new UniversityDto());
+			return "forum/university-syllabus-result";
+		}
+
+
 }

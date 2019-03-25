@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:if="${activeTab == 'result'}" id="universityresult" th:fragment="result">
+
+    <div class="container-fluid">
+        <div class="row form-group">
+            Branch :
+            <select id="branch">
+                <option th:value="'blank'"></option>
+                <option th:value="'Computer'" th:text="Computer"></option>
+                <option th:value="'Mechanical'" th:text="Mechanical"></option>
+                <option th:value="'IT'" th:text="IT"></option>
+                <option th:value="'ETC'" th:text="ETC"></option>
+                <option th:value="'Electrical'" th:text="Electrical"></option>
+                <option th:value="'Civil'" th:text="Civil"></option>
+
+            </select>
+            <br>
+            <br>
+            Year:
+            <select id="year" onchange="showresult()">
+                <option th:value="'blank'"></option>
+                <option th:value="'first'" th:text="First-Year"></option>
+                <option th:value="'second'" th:text="Second-Year"></option>
+                <option th:value="'third'" th:text="Third-Year"></option>
+                <option th:value="'final'" th:text="Final-Year"></option>
+            </select>
+            <br>
+            <br>
+            <div class="row" id="link"></div>
+            <script>
+                function showresult()
+                {
+                    var branch = document.getElementById("branch");
+                    var year = document.getElementById("year");
+
+                    if(branch.value == "Computer" && year.value == "first") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Computer First Year Result</a></li>";
+
+                    }
+                     if(branch.value == "Computer" && year.value == "second") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Computer Second Year Result</a></li>";
+
+                    }
+
+                      if(branch.value == "Computer" && year.value == "third") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Computer Third Year Result</a></li>";
+
+                    }
+                     if(branch.value == "Computer" && year.value == "final") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Computer Final Year Result</a></li>";
+
+                    }
+                     if(branch.value == "Mechanical" && year.value == "first") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Mechanical First Year Result</a></li>";
+
+                    }
+                    if(branch.value == "Mechanical" && year.value == "second") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Mechanical Second Year Result</a></li>";
+
+                    }
+                    if(branch.value == "Mechanical" && year.value == "third") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Mechanical Third Year Result</a></li>";
+
+                    }
+                    if(branch.value == "Mechanical" && year.value == "final") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Mechanical Final Year Result</a></li>";
+
+                    }
+                    if(branch.value == "IT" && year.value == "first") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download IT First Year Result</a></li>";
+
+                    }
+                    if(branch.value == "IT" && year.value == "second") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download IT Second Year Result</a></li>";
+
+                    }
+                    if(branch.value == "IT" && year.value == "third") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download IT Third Year Result</a></li>";
+
+                    }
+                    if(branch.value == "IT" && year.value == "final") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download IT Final Year Result</a></li>";
+
+                    }
+                    if(branch.value == "ETC" && year.value == "first") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download ETC First Year Result</a></li>";
+
+                    }
+                    if(branch.value == "ETC" && year.value == "second") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download ETC Second Year Result</a></li>";
+
+                    }
+                    if(branch.value == "ETC" && year.value == "third") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download ETC Third Year Result</a></li>";
+
+                    }
+                    if(branch.value == "ETC" && year.value == "final") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download ETC Final Year Result</a></li>";
+
+                    }
+                    if(branch.value == "Electrical" && year.value == "first") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Electrical First Year Result</a></li>";
+
+                    }
+                    if(branch.value == "Electrical" && year.value == "second") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Electrical Second Year Result</a></li>";
+
+                    }
+                    if(branch.value == "Electrical" && year.value == "third") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Electrical Third Year Result</a></li>";
+
+                    }
+                    if(branch.value == "Electrical" && year.value == "final") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Electrical Final Year Result</a></li>";
+
+                    }
+                    if(branch.value == "Civil" && year.value == "first") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Civil First Year Result</a></li>";
+
+                    }
+                    if(branch.value == "Civil" && year.value == "second") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Civil Second Year Result</a></li>";
+
+                    }
+                    if(branch.value == "Civil" && year.value == "third") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Civil Third Year Result</a></li>";
+
+                    }
+                    if(branch.value == "Civil" && year.value == "final") {
+                        alert(year.value);
+                        document.getElementById('link').innerHTML = "<li><a href='https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf'>Click to download Civil Final Year Result</a></li>";
+
+                    }
+
+                    //alert('in here');
+                }
+            </script>
+
+            <!--<span></span> <b class="caret"></b>-->
+            <!--</div>-->
+
+        </div>
+        <div class="centered"><h2><a th:href="@{https://www.cadcamlab.org/courseware/PDFs/ENOVIA%20VPLM%20Basic%20Concepts.pdf}"></a></h2></div>
+            <!--<div class="row form-group">
+            <embed src="../forum/assignment.pdf" />
+            </div>-->
+            <!-- post edit result message -->
+            <!--<div th:switch="${editResult}">
+                <div th:case="'success'">
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        The data was updated successfully.
+                    </div>
+                </div>
+                <div th:case="'failure'">
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        Data update failed.
+                    </div>
+                </div>
+            </div>
+
+            <div th:if="${posts.size()==0}" class="centered"><h2>No content for the selected date</h2></div>
+
+            <ul class="list-group list-custom-corner">
+                <li class="profile-list list-group-item side-borderless last-border" th:each="post:${posts}">
+                    <div class="media">
+                        <div class="media-body">
+                            <div class="media-heading">
+                                <a class="post-title" th:href="@{/post/{postId}(postId=${post.id})}" th:text="${post.title}">title</a>
+                            </div>
+                            <a class="post-tag"
+                               th:href="@{/category/{categoryName}(categoryName=${post.category.name})}"
+                               th:text="${post.category.displayName}"></a>
+                            <span class="post-date" th:text="${'release time：' + post.dateFormat()}"></span>
+                        </div>
+                        <div class="media-right media-middle">
+                            <button type="button" class="btn btn-primary editButton" data-toggle="modal" th:attr="data-post-id=${post.id}">edit</button>
+                        </div>
+                        <div class="media-right media-middle">
+                            <button type="button" class="btn btn-danger deleteButton" data-toggle="modal"
+                                    th:attr="data-post-id=${post.id},
+                                data-post-title=${post.title},
+                                data-post-username=${post.user.username},
+                                data-post-date=${post.dateCreated}">delete</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>-->
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
