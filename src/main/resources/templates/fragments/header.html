@@ -20,7 +20,7 @@
 
 			<ul class="nav navbar-nav navbar-right" sec:authorize="isAnonymous()">
 				<li class="active"><a href="/">Home</a></li>
-				<li><a href="../university">University</a></li>
+				<!--<li><a href="../university">University</a></li>-->
 				<li><a href="../user/registration">Registration</a></li>
 				<li><a href="../user/login">Log In</a></li>
 			</ul>
@@ -28,7 +28,7 @@
 			<ul class="nav navbar-nav navbar-right" sec:authorize="isAuthenticated()">
                 <li><a href="#" sec:authentication="name"></a></li>
                 <li><a href="../user/settings">Setting</a></li>
-                <li><a href="../university">University</a></li>
+                <li><a href="../university" sec:authorize="hasAuthority('ADMIN')">University</a></li>
                 <li><a href="../dashboard" sec:authorize="hasAuthority('ADMIN')">management</a></li>
                 <li><a th:href="@{/logout}">Sign out</a></li>
 			</ul>
