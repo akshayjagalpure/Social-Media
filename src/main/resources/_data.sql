@@ -3,6 +3,8 @@
 -- User Data
 INSERT INTO `T_USER` (username, password, email, activated, date_created, bio, roles) VALUES ('admin', '$2a$10$HiaJpKERbSfcZcuG5vcvlOZDG6Y/5SkDKi9RvKsSK3t3Spl9.7u6u', 'admin@admin.com', 1, '2017-11-02', 'admin bio', 'ADMIN,USER');
 INSERT INTO `T_USER` (username, password, email, activated, date_created, bio, roles) VALUES ('user', '$2a$10$Dr2lvPjmjiMuWf3mcMlyQeSbxFHI5LDLudHIB/fK/uygI1pnKk/3m', 'user@user.com', 1, '2017-11-02', 'user bio', 'USER');
+INSERT INTO `T_USER` (username, password, email, activated, date_created, bio, roles) VALUES ('universityadmin', '$2a$10$HiaJpKERbSfcZcuG5vcvlOZDG6Y/5SkDKi9RvKsSK3t3Spl9.7u6u', 'university@admin.com', 1, '2017-11-02', 'admin bio', 'ADMIN,USER');
+INSERT INTO `T_USER` (username, password, email, activated, date_created, bio, roles) VALUES ('collageadmin', '$2a$10$HiaJpKERbSfcZcuG5vcvlOZDG6Y/5SkDKi9RvKsSK3t3Spl9.7u6u', 'collage@admin.com', 1, '2017-11-02', 'admin bio', 'ADMIN,USER');
 
 -- Category Data
 INSERT INTO `T_CATEGORY` (name, weight, display_name, username, date_created) VALUES ('java', 1, 'Java', 'admin', '2017-11-02');
